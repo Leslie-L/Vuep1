@@ -1,8 +1,11 @@
 <script setup>
 import Header from './Header.vue'
 import Layout from './Layout.vue'
-import Resume from './Resume.vue'
-import Movements from './Movements'
+import Resume from './Resume/Index.vue'
+import Movements from './Movements.vue' 
+
+
+const amount=null;
 </script>
 <template>
   <Layout>
@@ -10,7 +13,11 @@ import Movements from './Movements'
       <Header />
     </template>
     <template #resume>
-      <Resume />
+      <Resume 
+        :label="'Ahorro total'"
+        :total-amount="100000"
+        :amount="amount"
+      />
     </template>
     <template #movements>
       <Movements />

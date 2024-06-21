@@ -1,6 +1,10 @@
-<script>
+<!-- eslint-disable vue/multi-word-component-names -->
+<script setup>
 import { ref } from 'vue'
 const showMovements = ref(false)
+const toggleMovements = () => {
+  showMovements.value = !showMovements.value
+}
 </script>
 <template>
   <div class="header">
@@ -10,7 +14,7 @@ const showMovements = ref(false)
     <slot name="resume"></slot>
   </div>
   <div class="movements">
-    <div class="head" @click="showMovements = !showMovements">
+    <div class="head" @click="toggleMovements">
       <div class="grip"></div>
     </div>
     <div class="body" v-show="showMovements">
