@@ -17,7 +17,10 @@ const amount=null;
         :label="'Ahorro total'"
         :total-amount="100000"
         :amount="amount"
-      />
+      >
+      <template #grapic>graphic</template>
+      <template #action>action</template>
+      </Resume>
     </template>
     <template #movements>
       <Movements />

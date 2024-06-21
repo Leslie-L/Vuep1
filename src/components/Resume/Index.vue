@@ -2,7 +2,13 @@
 <template>
     <main>
       <p>{{ labelVisual }}</p>
-      <h1>{{ amountVisual }}</h1>
+      <h1>{{ amountCurrency }}</h1>
+      <div class="graphic">
+        <slot name="graphic"></slot>
+      </div>
+      <div class="action">
+        <slot name="action"></slot>
+      </div>
     </main>
 </template>
 <script setup>
@@ -19,6 +25,10 @@ const {label,amount,totalAmount} = defineProps({
     type:Number
   }
 })
+const currencyFormatter = new Intl.NumberFormat("es-GT", {
+        style: "currency",
+        currency: "GTQ"
+  })
   const amountVisual = computed(()=> amount!=null?amount:totalAmount)
   const labelVisual = computed(()=>{
     if(amount==null){
@@ -26,6 +36,9 @@ const {label,amount,totalAmount} = defineProps({
     }else{
       return label
     }
+  })
+  const amountCurrency = computed(()=>{
+    return currencyFormatter.format(amountVisual.value)
   })
 
 </script>
