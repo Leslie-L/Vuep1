@@ -10,14 +10,14 @@
           :title="title"
           :description="description"
           :amount="amount"
-          @remove="remove"
+          @remove="handleRemove"
         />
       
     </div>
   </div>
 </template>
 <script setup>
-import {defineProps, toRefs} from 'vue'
+import {defineProps, toRefs, defineEmits} from 'vue'
 import Movement from "./Movement.vue"
 const props = defineProps({
   movements:{
@@ -26,8 +26,9 @@ const props = defineProps({
   }
 })
 const {movements} = toRefs(props)
-const remove = (id)=>{
-  console.log("Remove",id)
+const emit = defineEmits(['remove'])
+const handleRemove = (id)=>{
+  emit("remove",id)
 }
 </script>
 <style scoped>

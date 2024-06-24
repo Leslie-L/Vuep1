@@ -29,7 +29,8 @@ const currencyFormatter = new Intl.NumberFormat("es-GT", {
         style: "currency",
         currency: "GTQ"
   })
-  const amountVisual = computed(()=> amount!=null?amount:totalAmount)
+  const amountVisual = computed(() => amount !== null ? amount : totalAmount);
+
   const labelVisual = computed(()=>{
     if(amount==null){
       return (new Date).toDateString()
