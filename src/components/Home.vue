@@ -2,6 +2,7 @@
 <script setup>
 import Header from './Header.vue'
 import Layout from './Layout.vue'
+import Graphic from  './Graphic.vue'
 import Resume from './Resume/Index.vue'
 import Movements from './Movements/Index.vue'
 import Action from './Action.vue'
@@ -40,6 +41,7 @@ const movements = [
 ]
 
 const amount = null
+const amounts = [100, 200, 500, -400, 200, -600, 20, 500]
 </script>
 <template>
   <Layout>
@@ -48,7 +50,9 @@ const amount = null
     </template>
     <template #resume>
       <Resume :label="'Ahorro total'" :total-amount="100000" :amount="amount">
-        <template #grapic>graphic</template>
+        <template #graphic>
+          <Graphic :amounts="amounts" />
+        </template>
         <template #action>
           <Action />
         </template>

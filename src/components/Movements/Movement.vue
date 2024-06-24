@@ -79,8 +79,10 @@ h4 {
 }
 .red {
     color: red;
+    font-weight: bold;
 }
 .green {
     color: green;
+    font-weight: bold;
 }
 </style>
